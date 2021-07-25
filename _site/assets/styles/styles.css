@@ -1,0 +1,344 @@
+/* 
+Author: Spandan Anupam
+Year: 2021
+GitHub: https://github.com/surelynottrue
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,700;1,500;1,700&display=swap');
+
+:root {
+    font-family: "Fira Sans";
+    font-size: medium;
+    --color-accent: #E63946;
+    --color-darker: #1B2021;
+    --color-dark: #293241;
+    --color-light: #ced4da;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    max-width: 100%;
+    display: grid;
+    grid-template-areas:
+        "top top" 
+        "main side"
+        "foot foot";
+    grid-template-columns: 100vw 1200px;
+    grid-template-rows: auto 1fr auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 600;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+.brand {
+    display: flex;
+    grid-area: top;
+    height: 50px;
+    width: 100%;
+    font-size: larger;
+    align-items: center;
+}
+
+.branding {
+    width: 100%;
+    text-align: center;
+}
+
+.screen {
+    min-width: 80vw;
+    max-width: 70%;
+    min-height: calc(100vh - 75px);
+    margin: 0 auto;
+    background-color: rgba(41, 50, 65, 0.0);
+}
+
+.nav {
+    display: flex;
+    grid-area: top;
+    height: 40px;
+    margin: 0 auto;
+    place-items: center;
+    justify-content: center;
+}
+
+.nav-item {
+    display: inline-block;
+    padding-inline: 2vw;
+    text-align: center;
+    color: var(--color-light);
+}
+
+/* codepen slider*/
+.slider {
+    width: 100%;
+    height: inherit;
+    overflow: hidden;
+}
+  
+.slider ul {
+    margin-top: 0;
+    padding: 0;
+    display: flex;
+    width: 400%;
+    animation: slid 15s infinite reverse;
+    animation-timing-function: ease-in-out;
+}
+
+.slider li {
+    width: 50%;
+    list-style: none;
+}
+
+.slider img {
+    width: 100%;
+}
+
+@keyframes slid {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+
+.gallery {
+    grid-area: top;
+    width: 100%;
+    height: 300px;
+}
+
+.gallery > .slider > ul > li > img {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+
+.gallery > img {
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
+}
+
+.front-text {
+    grid-area: main;
+    float: left;
+    width: 70%;
+    min-height: 800px;
+    text-align: justify;
+}
+
+#text {
+    padding: 30px;
+}
+
+.lab-news {
+    grid-area: side;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    font-size: larger;
+}
+
+.news {
+    grid-area: side;
+    display: flex;
+    float: right;
+    width: 30%;
+    height: 20%;
+    justify-content: center;
+}
+
+.scroll-up {
+    height: 90%;
+    width: 80%;	
+    overflow: hidden;
+    position: relative;
+    text-align: justify;
+}
+.scroll-up p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    
+    /* Starting position */
+    -moz-transform:translateY(100%);
+    -webkit-transform:translateY(100%);	
+    transform:translateY(100%);
+    /* Apply animation to this element */	
+    -moz-animation: scroll-up 5s linear infinite;
+    -webkit-animation: scroll-up 5s linear infinite;
+    animation: scroll-up 5s linear infinite;
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes scroll-up {
+    0%   { -moz-transform: translateY(100%); }
+    100% { -moz-transform: translateY(-100%); }
+}
+@-webkit-keyframes scroll-up {
+    0%   { -webkit-transform: translateY(100%); }
+    100% { -webkit-transform: translateY(-100%); }
+}
+@keyframes scroll-up {
+    0%   { 
+    -moz-transform: translateY(100%); /* Browser bug fix */
+    -webkit-transform: translateY(100%); /* Browser bug fix */
+    transform: translateY(100%); 		
+    }
+    100% { 
+    -moz-transform: translateY(-100%); /* Browser bug fix */
+    -webkit-transform: translateY(-100%); /* Browser bug fix */
+    transform: translateY(-100%);
+ }
+}
+
+.paper-preview {
+    grid-area: side;
+    height: 40%;
+    padding-top: 20px;
+}
+
+.paper-preview > .slider {
+    width: calc(400px/1.4142);
+    height: 400px;
+    margin: 0 auto;
+}
+
+.paper-preview > .slider > ul > li > img {
+    height: 400px;
+    width: calc(400px/1.4142);
+    object-fit: cover;
+    padding-top: 40px;
+}
+
+.address {
+    display: inline-grid;
+    padding: 3%;
+    padding-top: 70px;
+    max-height: 400px;
+}
+
+.address > h4 {
+    margin: 0;
+}
+
+.map {
+    display: inline-grid;
+    float: right;
+    width: 30%;
+    height: 400px;
+    margin: 0 auto;
+    place-items: center;
+}
+
+.res-links {
+    padding-right: 50px;
+    padding-top: 50px;
+    text-align: right;
+}
+
+.res-link {
+    display: inline-grid;
+    margin: 0;
+    width: 100px;
+    padding-inline: 10px;
+}
+
+.publications {
+    display: grid;
+    padding: 45px;
+    padding-top: 10px;
+    text-align: justify;
+}
+
+.contact {
+    width: 70%;
+    padding-left: 15%;
+}
+
+.container {
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+.big-card {
+    display: flex;
+    width: 100%;
+}
+
+.picture {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    float: left;
+}
+
+.card {
+    display: block;
+    width: calc(100% - 240px);
+    margin-left: 20px;
+    float: right;
+}
+
+.big-card > .card > h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-accent);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.foot {
+    display: flex;
+    grid-area: foot;
+    width: calc((var(--vw, 1vw) * 100));
+    height: 75px;
+    background-color: var(--color-darker);
+    place-items: center;
+    text-align: center;
+}
+
+.foot-text {
+    width:50%;
+    margin: auto;
+    color: var(--color-light);
+}

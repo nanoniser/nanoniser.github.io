@@ -1,0 +1,31 @@
+<!-- 
+Author: Spandan Anupam
+Year: 2021
+GitHub: https://github.com/surelynottrue
+-->
+
+<!DOCTYPE html>
+<html>
+    {% include header.html %}
+    <body>
+        <div class="screen">
+            {% include brandnav.html %}
+            <div class="container">
+                {% for area in site.data.research %}
+                <h2>{{ area.topic }}</h2>
+                <div class="big-card">
+                    <div class="picture">
+                        <img src="{{ area.image }}">
+                    </div>
+                    <div class="card">
+                        {{ area.summary }}
+                        <br><br>
+                        Reference: <a href="{{ area.reference_link }}">{{ area.reference_name }}</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% include footer.html %}
+    </body>
+</html>

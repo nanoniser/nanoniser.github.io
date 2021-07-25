@@ -1,0 +1,39 @@
+<!-- 
+Author: Spandan Anupam
+Year: 2021
+GitHub: https://github.com/surelynottrue
+-->
+
+<!DOCTYPE html>
+<html>
+    {% include header.html %}
+    <body>
+        <div class="screen">
+            {% include brandnav.html %}
+            <div class="gallery">
+                <img src="https://picsum.photos/1200/300">
+            </div>
+            <div class="container">
+                {% for position in site.data.people %}
+                    <h2>{{ position.position }}</h2>
+                    {% for person in position.people %}
+                    <div class="big-card">
+                        <div class="picture">
+                            <img src="{{ person.image }}">
+                        </div>
+                        <div class="card">
+                            <h3>Area of Research</h3> 
+                            {{ person.area_of_research }}
+                            <h3>Summary</h3>
+                            {{ person.research_summary }}
+                            <br> <br>
+                            Contact: <a href="mailto:{{ person.contact }}">{{ person.contact }}</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+        {% include footer.html %}
+    </body>
+</html>

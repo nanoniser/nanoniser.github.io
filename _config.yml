@@ -1,0 +1,12 @@
+title: IBNL NISER
+email: pratap.sahoo@niser.ac.in
+description: >-
+  Description for the google results
+baseurl: ""
+url: ""
+github_username:  surelynotture
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed

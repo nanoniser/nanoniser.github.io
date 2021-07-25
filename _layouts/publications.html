@@ -1,0 +1,23 @@
+<!-- 
+Author: Spandan Anupam
+Year: 2021
+GitHub: https://github.com/surelynottrue
+-->
+
+<!DOCTYPE html>
+<html>
+    {% include header.html %}
+    <body>
+        <div class="screen">
+            {% include brandnav.html %}
+            <div class="res-links">
+                <div class="res-link"><a href="https://scholar.google.co.in/citations?user=G2N-2lQAAAAJ">Scholar</a></div>
+                <div class="res-link"><a href="https://www.researchgate.net/profile/Pratap-Sahoo">ResearchGate</a></div>
+            </div>
+            <div class=publications>
+                {{ content }}
+            </div>
+        </div>
+        {% include footer.html %}   
+    </body>
+</html>

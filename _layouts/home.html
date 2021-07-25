@@ -1,0 +1,49 @@
+<!-- 
+Author: Spandan Anupam
+Year: 2021
+GitHub: https://github.com/surelynottrue
+-->
+
+<!DOCTYPE html>
+<html>
+    {% include header.html %}
+    <body>
+        <div class="screen">
+            {% include brandnav.html %}
+            <div class="gallery">
+                <div class="slider">
+                    <ul>
+                      <li><img src="https://picsum.photos/1200/300"></li>
+                      <li><img src="https://picsum.photos/1200/300"></li>
+                      <li><img src="https://picsum.photos/1200/300"></li>
+                      <li><img src="https://picsum.photos/1200/300"></li>
+                    </ul>
+                  </div>
+            </div>
+            <div class="front-text">
+                {{ content }}
+            </div>
+            <div class="lab-news">LAB NEWS</div>
+            <div class="news">
+                <div class="scroll-up">
+                    <p>
+                        {% for news in site.data.news %}
+                            {{news | markdownify | remove: '<p>' | remove: '</p>' }} <br><br>
+                        {% endfor %}
+                    </p>
+                </div>
+            </div>
+            <div class="paper-preview">
+                <div class="slider">
+                    <ul>
+                        <li><img src="assets/images/papers/1.png"></li>
+                        <li><img src="assets/images/papers/2.png"></li>
+                        <li><img src="assets/images/papers/1 - Copy.png"></li>
+                        <li><img src="assets/images/papers/2 - Copy.png"></li>
+                    </ul>
+                  </div>
+            </div>
+        </div>
+        {% include footer.html %}
+    </body>
+</html>

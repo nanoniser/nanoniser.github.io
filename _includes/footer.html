@@ -1,0 +1,14 @@
+<footer class="foot">
+    <script type="text/javascript">
+        function setVw() {
+            let vw = document.documentElement.clientWidth / 100;
+            document.documentElement.style.setProperty('--vw', `${vw}px`);
+        }
+        setVw();
+        window.addEventListener('resize', setVw);
+    </script>
+    <div class="foot-text">
+        <i class="fa fa-copyright" aria-hidden="true"></i> 2021 Ion Beam and Nanomaterials Laboratory, NISER <br>
+        Bhubaneswar, India
+    </div>
+</footer> 

@@ -1,0 +1,14 @@
+- topic: Topic
+  image: /assets/images/people/mary.jpg
+  reference_link: https://arxiv.org/abs/1708.06421
+  reference_name: Layered material GeSe and vertical GeSe/MoS2 p-n heterojunctions
+  summary: |
+    Nemo deleniti qui eum vero consequuntur libero eum pariatur. Sed perferendis ex excepturi laborum soluta. Delectus qui iste esse et maiores iste. Officiis et officia vitae vel velit iusto rem. Et aut natus ab amet placeat. Non commodi id sit dolorem eos. In sint sint sequi. Excepturi perspiciatis ea officiis dolores laudantium ut consectetur. Exercitationem molestiae non est libero.
+  contact: mail@mail.com
+- topic: Topic
+  image: /assets/images/people/mary.jpg
+  reference: https://arxiv.org/abs/1708.06421
+  reference_name: Layered material GeSe and vertical GeSe/MoS2 p-n heterojunctions
+  summary: |
+    Nemo deleniti qui eum vero consequuntur libero eum pariatur. Sed perferendis ex excepturi laborum soluta. Delectus qui iste esse et maiores iste. Officiis et officia vitae vel velit iusto rem. Et aut natus ab amet placeat. Non commodi id sit dolorem eos. In sint sint sequi. Excepturi perspiciatis ea officiis dolores laudantium ut consectetur. Exercitationem molestiae non est libero.
+  contact: mail@mail.com
