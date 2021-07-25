@@ -1,3 +1,5 @@
 ---
 layout: research
+title: Research
+
 ---

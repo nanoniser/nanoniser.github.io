@@ -1,30 +1,40 @@
 <!-- 
-Author: Spandan Anupam
+Author: Spandan Anupam, Jyotirmaya Shivottam
 Year: 2021
 GitHub: https://github.com/surelynottrue
 -->
 
 <!DOCTYPE html>
 <html>
-    {% include header.html %}
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ page.title }} | IBNL</title>
+        <link rel="stylesheet" href="assets/styles/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="assets/scripts/main.js"></script>
+    </head>
     <body>
-        <div class="screen">
+        {% include hamburger.html %}
+        <div id="screen" class="screen">
             {% include brandnav.html %}
             <div class="gallery">
-                <div class="slider">
-                    <ul>
-                      <li><img src="https://picsum.photos/1200/300"></li>
-                      <li><img src="https://picsum.photos/1200/300"></li>
-                      <li><img src="https://picsum.photos/1200/300"></li>
-                      <li><img src="https://picsum.photos/1200/300"></li>
-                    </ul>
-                  </div>
+                <ul id="partial-view-gallery">
+                {% for image in site.static_files %}
+                    {% if image.path contains 'assets/images/gallery' %}
+                        <li>
+                            <img src="{{ image.path }}">
+                        </li> 
+                    {% endif %}
+                {% endfor %}
+                </ul>
             </div>
-            <div class="front-text">
+            <div id="front-text" class="front-text">
                 {{ content }}
             </div>
-            <div class="lab-news">LAB NEWS</div>
-            <div class="news">
+            <div id="news" class="news">
                 <div class="scroll-up">
                     <p>
                         {% for news in site.data.news %}
@@ -34,14 +44,15 @@ GitHub: https://github.com/surelynottrue
                 </div>
             </div>
             <div class="paper-preview">
-                <div class="slider">
-                    <ul>
-                        <li><img src="assets/images/papers/1.png"></li>
-                        <li><img src="assets/images/papers/2.png"></li>
-                        <li><img src="assets/images/papers/1 - Copy.png"></li>
-                        <li><img src="assets/images/papers/2 - Copy.png"></li>
-                    </ul>
-                  </div>
+                <ul id="partial-view-paper">
+                    {% for image in site.static_files %}
+                        {% if image.path contains 'assets/images/papers' %}
+                            <li>
+                                <img src="{{ image.path }}">
+                            </li> 
+                        {% endif %}
+                    {% endfor %}
+                </ul>
             </div>
         </div>
         {% include footer.html %}
