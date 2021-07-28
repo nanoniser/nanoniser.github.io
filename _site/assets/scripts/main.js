@@ -1,7 +1,6 @@
 // Author: Spandan Anupam, Jyotirmaya Shivottam
 // Year: 2021
 // GitHub: https://github.com/surelynottrue
-
 function moveNews() {
   if (document.documentElement.clientWidth < 616) {
     let screen = document.getElementById("screen");

@@ -1,0 +1,48 @@
+<!-- 
+Author: Spandan Anupam, Jyotirmaya Shivottam
+Year: 2021
+GitHub: https://github.com/surelynottrue
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog | IBNL</title>
+        <link rel="stylesheet" href="{{ site.url }}/assets/styles/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="{{ site.url }}/assets/images/favicon.ico">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="{{ site.url }}/assets/scripts/main.js"></script>
+        {% if page.katex %}
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+            <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+            <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false},
+                        {left: '\\(', right: '\\)', display: false},
+                        {left: '\\[', right: '\\]', display: true}
+                    ],
+                    throwOnError : false
+                    });
+                });
+            </script>
+        {% endif %}
+    </head>
+    <body>
+        {% include hamburger.html %}
+        <div class="screen">
+            {% include brandnav.html %}
+            <h1>{{ page.title }}</h1>
+            <h3 style="display: inline; font-weight: 400; opacity: 70%;"><b>Published:  </b> {{ page.date | date_to_string}}</h3> <br>
+            <h3 style="display: inline; font-weight: 400; opacity: 70%;"><b>Author: </b> {{ page.author }}</h3> <br> <br>
+            {{ content }}
+        </div>
+        {% include footer.html %}
+    </body>
+</html>

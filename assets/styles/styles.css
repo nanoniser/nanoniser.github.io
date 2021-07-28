@@ -84,12 +84,21 @@ a:hover {
     display: inline-block;
     text-align: left;
     width: 100px;
-    font-size: 57px;
+    font-size: 50px;
     margin-left: 10px;
     vertical-align: middle;
     line-height: 50px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-weight: 500;
+}
+
+.lettering a {
+    text-decoration: none;
+    color: var(--color-accent);
+}
+
+.lettering a:hover {
+    border-bottom: 3px dotted;
 }
 
 .screen {
@@ -278,26 +287,36 @@ a:hover {
     animation: scroll-up 5s linear infinite;
 }
 
-/* Move it (define the animation) */
-@-moz-keyframes scroll-up {
-    0%   { -moz-transform: translateY(100%); }
-    100% { -moz-transform: translateY(-100%); }
+.post-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
-@-webkit-keyframes scroll-up {
-    0%   { -webkit-transform: translateY(100%); }
-    100% { -webkit-transform: translateY(-100%); }
+
+.blog-card {
+    max-height: 300px;
+    background-color: #4e4d5318;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    padding-top: 10px;
+    transition: transform 0.5s ease;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: justify;
+    animation: slideup .5s ease;
 }
-@keyframes scroll-up {
-    0%   { 
-    -moz-transform: translateY(100%); /* Browser bug fix */
-    -webkit-transform: translateY(100%); /* Browser bug fix */
-    transform: translateY(100%); 		
-    }
-    100% { 
-    -moz-transform: translateY(-100%); /* Browser bug fix */
-    -webkit-transform: translateY(-100%); /* Browser bug fix */
-    transform: translateY(-100%);
- }
+
+.blog-card:hover {
+    transform: scale(1.01, 1.01);
+}
+
+.post-container a {
+    color: var(--color-darker);
+}
+
+.post-container a:hover {
+    color: var(--color-darker);
 }
 
 .paper-preview {
@@ -660,6 +679,28 @@ a:hover {
     transition: color 0.4s ease;
 }
 
+/* Move it (define the animation) */
+@-moz-keyframes scroll-up {
+    0%   { -moz-transform: translateY(100%); }
+    100% { -moz-transform: translateY(-100%); }
+}
+@-webkit-keyframes scroll-up {
+    0%   { -webkit-transform: translateY(100%); }
+    100% { -webkit-transform: translateY(-100%); }
+}
+@keyframes scroll-up {
+    0%   { 
+    -moz-transform: translateY(100%); /* Browser bug fix */
+    -webkit-transform: translateY(100%); /* Browser bug fix */
+    transform: translateY(100%); 		
+    }
+    100% { 
+    -moz-transform: translateY(-100%); /* Browser bug fix */
+    -webkit-transform: translateY(-100%); /* Browser bug fix */
+    transform: translateY(-100%);
+ }
+}
+
 /* Animations */
 @keyframes slideup {
     from {
@@ -699,6 +740,7 @@ a:hover {
     .front-text {
         grid-area: top;
         width: 100%;
+        margin-top: 200px;
     }
 
     .news {
@@ -771,6 +813,7 @@ a:hover {
     .front-text {
         grid-area: main;
         margin-bottom: 350px;
+        margin-top: 0;
     }
 
     .foot {
@@ -849,4 +892,3 @@ a:hover {
         margin-left: 0;
     }
 }
-
