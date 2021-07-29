@@ -1,3 +1,5 @@
+---
+---
 /* 
 Author: Spandan Anupam, Jyotirmaya Shivottam
 Year: 2021
@@ -41,10 +43,10 @@ a {
     text-decoration: none;
     color: var(--color-dark);
     font-weight: 600;
-}
 
-a:hover {
-    color: var(--color-accent);
+    &:hover {
+        color: var(--color-accent);
+    }
 }
 
 .brand {
@@ -60,15 +62,6 @@ a:hover {
 .branding {
     width: 100%;
     text-align: center;
-}
-
-.niser-logo {
-    display: inline-block;
-    background: url("/assets/images/niser-logo.png");
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    vertical-align: middle;
 }
 
 .logo {
@@ -90,15 +83,15 @@ a:hover {
     line-height: 50px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-weight: 500;
-}
 
-.lettering a {
-    text-decoration: none;
-    color: var(--color-accent);
-}
+    & a {
+        text-decoration: none;
+        color: var(--color-accent);
 
-.lettering a:hover {
-    border-bottom: 3px dotted;
+        &:hover {
+            border-bottom: 3px dotted;
+        }
+    }
 }
 
 .screen {
@@ -129,56 +122,61 @@ a:hover {
 .gallery {
     width: 100%;
     height: 500px;
-}
 
-.gallery > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 /* The Carousel */
 .partialViewSlider-outerwrapper{
     position: relative;
     width: 100%;
+
+    &.partialViewSlider-outsideControls{
+        padding: 0 6%;
+    }
+
+    & ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        transition-property: transform;
+        transition-duration: 0ms;
+        transition-timing-function: ease-out;
+
+        & > li {
+            display: inline-block;
+            position: relative;
+            font-size: 1rem;
+            transition-property: all;
+            transition-duration: 0ms;
+            transition-timing-function: ease-out;
+        }
+    }
 }
-.partialViewSlider-outerwrapper.partialViewSlider-outsideControls{
-    padding: 0 6%;
-}
+
 .partialViewSlider-wrapper{
     overflow: hidden;
     font-size: 0;
     position: relative;
-}
-.partialViewSlider-outerwrapper ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    transition-property: transform;
-    transition-duration: 0ms;
-    transition-timing-function: ease-out;
-}
-.partialViewSlider-outerwrapper ul > li{
-    display: inline-block;
-    position: relative;
-    font-size: 1rem;
-    transition-property: all;
-    transition-duration: 0ms;
-    transition-timing-function: ease-out;
-}
-.partialViewSlider-wrapper.partialViewSlider-perspective ul > li{
-    width: 100%;
-}
 
-.partialViewSlider-wrapper.partialViewSlider-perspective ul > li.active{
-    width: 100%;
-}
+    & > ul > li > img {
+        width: 100%;
+        height: 500px;
+        display: block;
+        object-fit: cover;
+    }
 
-.partialViewSlider-wrapper ul > li > img{
-    width: 100%;
-    height: 500px;
-    display: block;
-    object-fit: cover;
+    &.partialViewSlider-perspective ul > li {
+        width: 100%;
+
+        &.active {
+            width: 100%;
+        }
+    }
 }
 
 .partialViewSlider-nav{
@@ -189,12 +187,15 @@ a:hover {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+
 .partialViewSlider-prev{
     left: 3%;
 }
+
 .partialViewSlider-next{
     right: 3%;
 }
+
 .partialViewSlider-outsideControls .partialViewSlider-nav,
 .partialViewSlider-neighborControls .partialViewSlider-nav{
     color: #CCC;
@@ -218,26 +219,30 @@ a:hover {
     bottom: 20px;
     left: 50%;
     transform: translate(-50%);
+
+    & li a {
+        position: relative;
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        margin: 0 5px;
+
+        &:before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            border: 1px solid #FFF;
+            border-radius: 50%;
+            transition: all 0.25s ease-out;
+        }
+    }
+
+    & li.active a:before{
+        background: #FFF;
+    }
 }
-.partialViewSlider-dots li a{
-    position: relative;
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    margin: 0 5px;
-}
-.partialViewSlider-dots li a:before{
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    border: 1px solid #FFF;
-    border-radius: 50%;
-    transition: all 0.25s ease-out;
-}
-.partialViewSlider-dots li.active a:before{
-    background: #FFF;
-}
+
 
 .front-text {
     grid-area: main;
@@ -270,27 +275,36 @@ a:hover {
     overflow: hidden;
     position: relative;
     text-align: justify;
-}
-.scroll-up p {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    
-    /* Starting position */
-    -moz-transform:translateY(100%);
-    -webkit-transform:translateY(100%);	
-    transform:translateY(100%);
-    /* Apply animation to this element */	
-    -moz-animation: scroll-up 5s linear infinite;
-    -webkit-animation: scroll-up 5s linear infinite;
-    animation: scroll-up 5s linear infinite;
+
+    & p {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        
+        /* Starting position */
+        -moz-transform:translateY(100%);
+        -webkit-transform:translateY(100%);	
+        transform:translateY(100%);
+        /* Apply animation to this element */	
+        -moz-animation: scroll-up 5s linear infinite;
+        -webkit-animation: scroll-up 5s linear infinite;
+        animation: scroll-up 5s linear infinite;
+    }
 }
 
 .post-container {
     margin: 0;
     padding: 0;
     width: 100%;
+
+    & a {
+        color: var(--color-darker);
+
+        &:hover {
+            color: var(--color-darker);
+        }
+    }
 }
 
 .blog-card {
@@ -305,18 +319,10 @@ a:hover {
     text-overflow: ellipsis;
     text-align: justify;
     animation: slideup .5s ease;
-}
 
-.blog-card:hover {
-    transform: scale(1.01, 1.01);
-}
-
-.post-container a {
-    color: var(--color-darker);
-}
-
-.post-container a:hover {
-    color: var(--color-darker);
+    &:hover {
+        transform: scale(1.01, 1.01);
+    }
 }
 
 .paper-preview {
@@ -327,27 +333,26 @@ a:hover {
     text-align: center;
     margin-bottom: 10px;
     animation: slideup .5s ease;
+
+    & > div > ul {
+        display: none;
+    }
+    
+    & > div > a > i {
+        display: none;
+    }
 }
 
 #partial-view-paper > li {
     margin: 0 auto;
     
-}
-
-#partial-view-paper > li > img {
-    width: 70%;
-    min-width: 200px;
-    height: calc(70% * 1.4142);
-    object-fit: cover;
-    margin: 0 auto;
-}
-
-.paper-preview > div > ul {
-    display: none;
-}
-
-.paper-preview > div > a > i {
-    display: none;
+    & > img {
+        width: 70%;
+        min-width: 200px;
+        height: calc(70% * 1.4142);
+        object-fit: cover;
+        margin: 0 auto;
+    }
 }
 
 .address {
@@ -356,10 +361,10 @@ a:hover {
     max-height: 400px;
     margin-left: calc((100vw - 600px - var(--contact-width))/2);
     animation: slideup .5s ease;
-}
 
-.address > h4 {
-    margin: 0;
+    & > h4 {
+        margin: 0;
+    }
 }
 
 .map {
@@ -405,20 +410,20 @@ a:hover {
     min-width: 70px;
     height: 100%;
     text-align: center;
-}
 
-.year:hover {
-    background-color: #f0f0f0;
-}
+    &:hover {
+        background-color: #f0f0f0;
+    }
 
-.year > button {
-    width: 100%;
-    height: 100%;
-    border: none;
-    font: inherit;
-    background: transparent;
-    font-size: large;
-    font-weight: 500;
+    & > button {
+        width: 100%;
+        height: 100%;
+        border: none;
+        font: inherit;
+        background: transparent;
+        font-size: large;
+        font-weight: 500;
+    }
 }
 
 .tabs {
@@ -439,6 +444,11 @@ a:hover {
     display: flex;
     width: 100%;
     padding-bottom: 40px;
+
+    & > .card > h3 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
 }
 
 .picture {
@@ -457,32 +467,27 @@ a:hover {
     float: right;
 }
 
-.big-card > .card > h3 {
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-}
 
-.hover-underline-animation:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--color-accent);
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-}
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--color-accent);
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
 
-.hover-underline-animation:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+    &:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
 }
 
 .foot {
@@ -501,18 +506,17 @@ a:hover {
     margin: auto;
     color: var(--color-light);
     line-height: 10px;
-}
 
-.foot-text a {
-    color: var(--color-light);
-}
+    & a {
+        color: var(--color-light);
 
-.foot-text a:hover {
-    color: var(--color-accent);
-    text-decoration: none;
-    border-bottom: 2px dotted;
+        &:hover {
+            color: var(--color-accent);
+            text-decoration: none;
+            border-bottom: 2px dotted;
+        }
+    }
 }
-/* CORE STYLES */
 
 .main-container {
     max-width: 960px;
@@ -530,10 +534,10 @@ a:hover {
     margin-top: 1rem;
     transition: opacity 1s ease-in-out;
     text-decoration: none;
-}
 
-.btn:hover {
-    opacity: 0.7;
+    &:hover {
+        opacity: 0.7;
+    }
 }
 
 /* https://codepen.io/bradtraversy/pen/vMGBjQ */
@@ -544,139 +548,139 @@ a:hover {
     top: 0;
     left: 0;
     z-index: 1;
-}
 
-.menu-wrap .toggler {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    opacity: 0;
-}
+    & .toggler {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+    
+    & .hamburger {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 20px;
+        height: 40px;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-.menu-wrap .hamburger {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 20px;
-    height: 40px;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        /* Hamburger Line */
+        & > div {
+            position: relative;
+            flex: none;
+            width: 100%;
+            height: 3px;
+            background: var(--color-darker);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+        
+        /* Hamburger Lines - Top & Bottom */
+        & > div::before,
+        & > div::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: -10px;
+            width: 100%;
+            height: 3px;
+            background: inherit;
+        }
+        
+        /* Moves Line Down */
+        & > div::after {
+            top: 10px;
+        }
+    }
+    
+    /* Toggler Animation */
+    & .toggler:checked + .hamburger > div {
+        transform: rotate(135deg);
 
-/* Hamburger Line */
-.menu-wrap .hamburger > div {
-    position: relative;
-    flex: none;
-    width: 100%;
-    height: 3px;
-    background: var(--color-darker);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.4s ease;
-}
+        /* Turns Lines Into X */
+        &:before,
+        &:after {
+            top: 0;
+            transform: rotate(90deg);
+        }
+    }
+    
+    /* Rotate On Hover When Checked */
+    & .toggler:checked:hover + .hamburger > div {
+        transform: rotate(225deg);
+    }
+    
+    /* Show Menu */
+    & .toggler:checked ~ .menu {
+        visibility: visible;
 
-/* Hamburger Lines - Top & Bottom */
-.menu-wrap .hamburger > div::before,
-.menu-wrap .hamburger > div::after {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    top: -10px;
-    width: 100%;
-    height: 3px;
-    background: inherit;
-}
+        & > div {
+            transform: scale(1);
+            transition-duration: var(--menu-speed);
+        }
+        
+        & > div > div {
+            opacity: 1;
+            transition:  opacity 0.4s ease 0.4s;
+        }
+    }
+    
+    & .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-/* Moves Line Down */
-.menu-wrap .hamburger > div::after {
-    top: 10px;
-}
+        & > div {
+            background: var(--color-accent);
+            border-radius: 50%;
+            width: 300vw;
+            height: 300vw;
+            display: flex;
+            flex: none;
+            align-items: center;
+            justify-content: center;
+            transform: scale(0);
+            transition: all 0.4s ease;
 
-/* Toggler Animation */
-.menu-wrap .toggler:checked + .hamburger > div {
-    transform: rotate(135deg);
-}
+            & > div {
+                text-align: center;
+                max-width: 90vw;
+                max-height: 100vh;
+                opacity: 0;
+                transition: opacity 0.4s ease;
 
-/* Turns Lines Into X */
-.menu-wrap .toggler:checked + .hamburger > div:before,
-.menu-wrap .toggler:checked + .hamburger > div:after {
-    top: 0;
-    transform: rotate(90deg);
-}
+                & > ul > li {
+                    list-style: none;
+                    color: var(--color-light);
+                    font-size: 1.5rem;
+                    padding: 1rem;
 
-/* Rotate On Hover When Checked */
-.menu-wrap .toggler:checked:hover + .hamburger > div {
-    transform: rotate(225deg);
-}
-
-/* Show Menu */
-.menu-wrap .toggler:checked ~ .menu {
-    visibility: visible;
-}
-
-.menu-wrap .toggler:checked ~ .menu > div {
-    transform: scale(1);
-    transition-duration: var(--menu-speed);
-}
-
-.menu-wrap .toggler:checked ~ .menu > div > div {
-    opacity: 1;
-    transition:  opacity 0.4s ease 0.4s;
-}
-
-.menu-wrap .menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    visibility: hidden;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu-wrap .menu > div {
-    background: var(--color-accent);
-    border-radius: 50%;
-    width: 300vw;
-    height: 300vw;
-    display: flex;
-    flex: none;
-    align-items: center;
-    justify-content: center;
-    transform: scale(0);
-    transition: all 0.4s ease;
-}
-
-.menu-wrap .menu > div > div {
-    text-align: center;
-    max-width: 90vw;
-    max-height: 100vh;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.menu-wrap .menu > div > div > ul > li {
-    list-style: none;
-    color: var(--color-light);
-    font-size: 1.5rem;
-    padding: 1rem;
-}
-
-.menu-wrap .menu > div > div > ul > li > a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.4s ease;
+                    & a {
+                        color: inherit;
+                        text-decoration: none;
+                        transition: color 0.4s ease;
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* Move it (define the animation) */
@@ -756,17 +760,17 @@ a:hover {
     .paper-preview  {
         height: 300px;
         width: 50%;
-    }
 
-    .paper-preview > .slider {
-        height: 300px;
-        width: calc(300px/1.4142);
-    }
+        & > .slider {
+            height: 300px;
+            width: calc(300px/1.4142);
 
-    .paper-preview > .slider > ul > li > img {
-        height: 300px;
-        width: calc(300px/1.4142);
-        padding-top: 0;
+            & > ul > li > img {
+                height: 300px;
+                width: calc(300px/1.4142);
+                padding-top: 0;
+            }
+        }    
     }
 
     .scroll-up {
@@ -775,14 +779,14 @@ a:hover {
 
     .gallery {
         height: 300px;
-    }
-    
-    .gallery > img {
-        height: 300px;
-    }
 
-    .gallery > .slider > ul > li > img {
-        height: 300px;
+        & > img {
+            height: 300px;
+        }
+
+        & > .slider > ul > li > img {
+            height: 300px;
+        }
     }
 
     .year-navigator {
@@ -855,6 +859,10 @@ a:hover {
 
     .menu-wrap {
         display: unset;
+
+        & .menu > div > div > ul {
+            padding-inline: 0;
+        }
     }
     
     .nav {
@@ -865,18 +873,8 @@ a:hover {
         height: calc(60px + 1rem);
     }
 
-    .menu-wrap .menu > div > div > ul {
-        padding-inline: 0;
-    }
-
     .scroll-up {
         margin-top: 200px;
-    }
-
-    .niser-logo {
-        width: 60px;
-        height: 60px;
-        margin-right: -10px;
     }
     
     .logo {
