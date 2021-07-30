@@ -14,9 +14,14 @@ GitHub: https://github.com/surelynottrue
     font-family: "Fira Sans";
     font-size: medium;
     --color-accent: #E63946;
-    --color-darker: #1B2021;
-    --color-dark: #293241;
+    --color-link: #293241;
+    --color-dark: #1B2021;
     --color-light: #ced4da;
+    --color-text: #000000;
+    --color-bg: #ffffff;
+    --color-lettering: #000000;
+    --color-button: #f0f0f0;
+    --color-card: #4e4d5318;
 
     /* others */
     --menu-speed: 0.75s;
@@ -25,6 +30,8 @@ GitHub: https://github.com/surelynottrue
 
 html {
     scroll-behavior: smooth;
+    background-color: var(--color-bg);
+    color: var(--color-text)
 }
 
 body {
@@ -41,7 +48,7 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--color-dark);
+    color: var(--color-link);
     font-weight: 600;
 
     &:hover {
@@ -83,6 +90,7 @@ a {
     line-height: 50px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-weight: 500;
+    color: var(--color-lettering);
 
     & a {
         text-decoration: none;
@@ -299,10 +307,10 @@ a {
     width: 100%;
 
     & a {
-        color: var(--color-darker);
+        color: var(--color-dark);
 
         &:hover {
-            color: var(--color-darker);
+            color: var(--color-dark);
         }
     }
 }
@@ -319,6 +327,8 @@ a {
     text-overflow: ellipsis;
     text-align: justify;
     animation: slideup .5s ease;
+    color: var(--color-text);
+    background-color: var(--color-card);
 
     &:hover {
         transform: scale(1.01, 1.01);
@@ -412,7 +422,7 @@ a {
     text-align: center;
 
     &:hover {
-        background-color: #f0f0f0;
+        background-color: var(--color-button);
     }
 
     & > button {
@@ -423,6 +433,7 @@ a {
         background: transparent;
         font-size: large;
         font-weight: 500;
+        color: var(--color-text);
     }
 }
 
@@ -496,7 +507,7 @@ a {
     width: calc((var(--vw, 1vw) * 100));
     height: 75px;
     margin-top: 20px;
-    background-color: var(--color-darker);
+    background-color: var(--color-dark);
     place-items: center;
     text-align: center;
 }
@@ -513,7 +524,6 @@ a {
         &:hover {
             color: var(--color-accent);
             text-decoration: none;
-            border-bottom: 2px dotted;
         }
     }
 }
@@ -578,7 +588,7 @@ a {
             flex: none;
             width: 100%;
             height: 3px;
-            background: var(--color-darker);
+            background: var(--color-text);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -888,5 +898,16 @@ a {
         line-height: 30px;
         font-weight: 500;
         margin-left: 0;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-link: #d9e2f5;
+        --color-lettering: white;
+        --color-text: #f9f9f9;
+        --color-bg: #121212;
+        --color-button: #262626;
+        --color-card: #171717;
     }
 }
